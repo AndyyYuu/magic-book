@@ -302,9 +302,72 @@ body.single .edge{display:none!important}
 .em-orb circle{fill:var(--gold-l)}
 .em-star{fill:var(--gold-l);transform-box:fill-box;transform-origin:center;animation:thump 3s ease-in-out infinite}
 
-.face:not(.live) .pic *,.face:not(.live) .pic::after,.face:not(.live) .cover *{animation-play-state:paused!important}
+
+/* ---------- editions, sub-heads, portals ---------- */
+.sub{display:flex;align-items:center;gap:.7em;margin:.7em 0 .45em;font-size:.76em;letter-spacing:.3em;color:var(--cin);white-space:nowrap}
+.sub::before,.sub::after{content:"";flex:1;height:1px;background:var(--ink3);opacity:.55}
+.flow p.note-p{font-family:var(--f-hand);font-size:1.12em;color:var(--ink2);text-indent:0;text-align:left;line-height:1.6;margin:.2em 0 .5em}
+.ed-label{font-size:.66em;letter-spacing:.4em;color:var(--ink3);margin-top:.6em;text-indent:.4em}
+.ed-tabs{display:flex;gap:.45em;flex-wrap:wrap;justify-content:center}
+.ed-tab{font:inherit;font-size:.86em;padding:.32em .95em;border:1px solid var(--ink3);background:transparent;color:var(--ink2);border-radius:999px;cursor:pointer;letter-spacing:.1em;transition:background .2s,color .2s,border-color .2s}
+.ed-tab:hover{border-color:var(--cin);color:var(--cin)}
+.ed-tab.on{background:var(--cin);border-color:var(--cin);color:var(--paper)}
+.ed-tab:focus-visible{outline:1.5px solid var(--gold-d);outline-offset:2px}
+.ed-blurb{font-size:.8em;color:var(--ink2);max-width:19em;line-height:1.7}
+.portal{position:relative;display:flex;flex-direction:column;align-items:center;gap:.15em;margin:1em auto .2em;padding:1em 1em .9em;max-width:22em;text-align:center;text-decoration:none;color:var(--ink);
+  background:var(--noise),var(--plate);border:1px solid var(--gold-d);outline:3px double var(--gold);outline-offset:3px;box-shadow:0 3px 10px rgba(60,35,10,.22);animation:portalGlow 4s ease-in-out infinite;cursor:pointer}
+.portal:hover{background:var(--noise),var(--keyw)}
+.portal:focus-visible{outline-color:var(--cin)}
+.portal.soon{cursor:default;animation:none;opacity:.85;border-style:dashed;outline-style:dashed}
+.po-k{font-size:.66em;letter-spacing:.35em;color:var(--ink3)}
+.po-n{font-family:var(--f-cal);font-size:1.7em;line-height:1.25}
+.po-s{font-family:var(--f-fell);font-style:italic;color:var(--ink2);font-size:.92em}
+.po-d{font-size:.8em;color:var(--ink2);margin-top:.15em}
+.po-go{margin-top:.45em;font-size:.82em;color:var(--cin);letter-spacing:.2em}
+.po-go i{font-style:normal;display:inline-block;animation:nudge 1.6s ease-in-out infinite}
+@keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+@keyframes portalGlow{0%,100%{box-shadow:0 3px 10px rgba(60,35,10,.22),0 0 0 rgba(239,216,148,0)}50%{box-shadow:0 3px 10px rgba(60,35,10,.22),0 0 18px rgba(201,162,78,.55)}}
+.flow > .portal:first-child{margin-top:26%}
+.end-link{font-family:var(--f-fell);font-style:italic;color:var(--cin);font-size:1em;text-decoration:none;border-bottom:1px solid var(--cin2)}
+.toc.dense h2{margin-bottom:.35em}
+.toc.dense .toc-item{font-size:.82em;padding:.05em .1em;line-height:1.55}
+.toc.dense .t-num{min-width:5.2em}
+#edBtn{min-width:5.2em}
+#chap{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:16em}
+/* new plates */
+.gn{transform-box:fill-box;transform-origin:center;animation:gpop 7s ease-out infinite both}
+@keyframes gpop{0%{opacity:0;transform:scale(0)}5%{opacity:1;transform:scale(1.35)}9%,86%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(1)}}
+.glk{stroke:var(--ink3);stroke-width:1.1;animation:glk 7s infinite both}
+@keyframes glk{0%{opacity:0}7%,86%{opacity:.85}100%{opacity:0}}
+.wv{fill:none;stroke:var(--ink);stroke-width:1.6;stroke-linejoin:round}
+.scroll2{animation:scroll2 3s linear infinite}
+@keyframes scroll2{to{transform:translateX(-60px)}}
+.nz{animation:nzA 4s ease-in infinite both}
+@keyframes nzA{0%{transform:translateX(0);opacity:0}10%{opacity:1}52%{transform:translateX(92px);opacity:1}58%{transform:translateX(84px);opacity:.8}72%,100%{transform:translateX(84px);opacity:0}}
+.nzx{animation:nzx 4s infinite both}
+@keyframes nzx{0%,52%{opacity:0}56%,80%{opacity:1}100%{opacity:0}}
+.pk{animation:pkA 3.2s linear infinite both}
+@keyframes pkA{0%{transform:translateX(0);opacity:0}15%{opacity:1}85%{opacity:1}100%{transform:translateX(30px);opacity:0}}
+.ibar{transform-box:fill-box;transform-origin:50% 100%;animation:barA 2.6s ease-in-out infinite alternate both}
+@keyframes barA{from{transform:scaleY(.55)}to{transform:scaleY(1.1)}}
+.sea{fill:var(--mal);opacity:.32}
+.swave{fill:none;stroke:var(--paper);stroke-width:1.5;opacity:.8}
+.xmk{transform-box:fill-box;transform-origin:center;animation:thump 1.8s ease-in-out infinite}
+.drift{animation:drift 14s linear infinite}
+@keyframes drift{from{transform:translateX(-40px)}to{transform:translateX(70px)}}
+.xt{fill:none;stroke:var(--cin);stroke-width:1.8;stroke-linecap:round}
+.xt ellipse,.xt path{fill:none}
+.xt1{transform-box:view-box;transform-origin:160px 98px;animation:spin 14s linear infinite}
+.xt2{transform-box:view-box;transform-origin:160px 98px;animation:sway 5s ease-in-out infinite}
+.xt3{transform-box:view-box;transform-origin:160px 98px;animation:sway 6.5s ease-in-out infinite reverse}
+.orbb{transform-box:view-box;transform-origin:160px 98px;animation:orbB 3.4s ease-in-out infinite}
+@keyframes orbB{0%,100%{transform:scale(1)}50%{transform:scale(1.045)}}
+.rip{fill:none;stroke:var(--cin2);stroke-width:1.2;transform-box:fill-box;transform-origin:center;animation:rip 3.9s ease-out infinite both}
+@keyframes rip{0%{transform:scale(.95);opacity:.7}100%{transform:scale(1.9);opacity:0}}
+
+.face:not(.live) .pic *,.face:not(.live) .pic::after,.face:not(.live) .cover *,.face:not(.live) .portal,.face:not(.live) .portal *{animation-play-state:paused!important}
 @media (prefers-reduced-motion: reduce){
-  .pic *,.pic::after,.cover *{animation:none!important}
+  .pic *,.pic::after,.cover *,.portal,.portal *{animation:none!important}
   .leaf,.book{transition-duration:.2s!important}
 }
 </style>
@@ -318,81 +381,114 @@ body.single .edge{display:none!important}
   <button class="btn" id="prev" aria-label="上一页"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
   <div class="meta" aria-live="polite"><div id="where">封面</div><div id="chap">点封面翻开</div></div>
   <button class="btn" id="tocBtn">目录</button>
+  <button class="btn" id="edBtn" title="换一条线来读">时间线篇</button>
   <button class="btn" id="next" aria-label="下一页"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
 </nav>
 
 <script>
 (()=>{
-const CN=['','一','二','三','四','五','六','七','八','九','十','十一','十二','十三','十四','十五'];
-const RO=['','I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII','XIII','XIV','XV'];
+const CN=['','一','二','三','四','五','六','七','八','九','十','十一','十二','十三','十四','十五','十六','十七','十八','十九','二十'];
+const RO=['','I','II','III','IV','V','VI','VII','VIII','IX','X','XI','XII','XIII','XIV','XV','XVI','XVII','XVIII','XIX','XX','XXI','XXII','XXIII','XXIV'];
 
-/* ---------------- 正文 ---------------- */
-const CH=[
-{t:'积木与琴键',en:'Keys & Bricks',fig:'piano',cap:'会自己弹的琴键',body:[
-'小时候，依旧贪玩的我，最喜欢玩的三个东西，就是弹琴，乐高和Scratch。像画画什么的，我都不是那么喜欢。小时候，家长们信仰的就是多元发展。在我很小的时候，家长选了很多东西摆在我面前，让我选，我选了琴键？（如果我没记错的话），所以自然而然想到了钢琴，乐器之王。弹钢琴让我有了音乐起源，而我好像又恰巧就有绝对音准。所以就更适合了。但那时候弹钢琴大多数并非自己真正热爱，每次失误还要被打手。',
-'除此之外，父母送我去少年宫，想要让我找寻自己的爱好。乐高那个时候很火，而且能靠自己的手拼出自己的各种想法，很有成就感。而我也在少年宫第一次了解到了编程。和乐高很像，但是是电脑上的乐高。也类似拼接的方式，将一个个程序块拼接起来。这让我第一次可以做游戏，也让我第一次了解到MIT，这个Scratch是MIT做出来的，MIT做给低龄小朋友，拖拽的方式很创新。很天才的想法！我也想在未来做出这样的软件！',
-{plate:'blocks',cap:'电脑上的乐高',q:'将一个个程序块拼接起来。这让我第一次可以做游戏。'},
-'那时候的生活很美好。可以自己做游戏，搭房子，几乎能搭建一切自己想要的虚拟或者真实世界，就像是自己的小世界的创世神。'
-]},
-{t:'一次跌倒',en:'The Fall',fig:'detector',cap:'第一个产品：跌倒检测器',body:[
-'但那时候的乐高和Scratch主要都是为了满足自己的想法和欲望，活在自己的精神世界中。而在七年级，如今仍然记得，妈妈突然带我回了老家。那一晚，妈妈和外婆都哭成了泪人。我从未见过坚强的妈妈哭的这么伤心过。原来是妈妈的外公因为跌倒去世了。',
-'那时候在少年宫已经在上升级版的Scratch课，是ScratchPi，也就是Scratch写程序外接乐高硬件，可以让这些硬件动起来，也就是我拥有了赋予他们灵魂的能力。这时候我就开始想，我是不是可以用ScratchPi做些更有意义的事，而不是单单围绕我自己。现在这个跌倒的问题摆在我面前了，我能不能解决这个问题呢？',
-'那时候幼小的我还不知道做市场调查，我只是想着，看到了这个痛点，我又有一些能力，我就要去解决。执行力驱使，我直接开始一步步研究，如何探测跌倒，如何定义阈值，甚至还有如何携带。我直接做出了一个小型的跌倒检测设备，笨重的外壳，不太灵敏的跌倒检测，但却是我做的第一个产品。我给妈妈展示，我看到她眼里的欣慰，我第一次感觉到产品的意义。能让大家受益，让这个世界变得更美好，就是产品的意义。',
-'于是我经历了一系列更加系统和高级的产品定义与调研，我妈帮我找了个导师带着我做。与此同时，我开始更多的接触国际与创业。我参加了一个叫做YEA!的夏令营，在这个里面系统做了第二个产品。当时我们主要围绕独居老人，做了一个XR伴侣看世界的产品。当时VR刚刚兴起，当时就在想，如何更好的运用新技术，让大家获益。VR最大的点就是沉浸，戴上眼镜就进入了这个世界。而我们这个产品就是让养老院的老人们戴上眼镜就可以身临其境回到家乡，很多老人他们行动不便，没办法真正回家乡再看一眼，这种方式也算圆了他们的愿。',
-'而我们在实地考察的时候，一位聋哑老人用完我们的产品，在我的手心写了一个“好”字。看到老人眼里的光，真的感觉自己的一切努力都有了回报，有了价值。',
-{plate:'hao',cap:'写在掌心的“好”',q:'一位聋哑老人用完我们的产品，在我的手心写了一个“好”字。'},
-'而YEA!也让我有机会第一次去了美国参与路演。虽然那时候我还年幼，但我能感受到其他美国人的创意与思想，美国自由的气氛当时就已经感染了我。'
-]},
-{t:'养老院里的新痛点',en:'A Companion',fig:'robot',cap:'跌倒检测陪伴系统',body:[
-'与此同时，我也在养老院发现了一些新的痛点。很多养老院的独居老人们，他们平时很孤单。我们带给他们产品试用的时候，看到他们脸上的笑容，我突然意识到，要是能做一个陪伴他们的小机器人就好了。这其实是我未来会学到的“做Mom Test，了解用户痛点，功能改进”。这能和我的跌倒检测设备组成一个更大的系统，专门为独居老人们服务。',
-'在我之前的调查中，发现中国老龄化程度已经越来越严重了，尤其是独居老人。这时候的我，已经觉醒了一些市场的概念了。这块市场大，我就选择这块市场。于是我继续利用ScratchPi做出了一整个跌倒检测陪伴系统，获得了丘成桐中学科学奖。而那也是我第一次拓宽眼界。原本我以为小小年纪的我已经做出了产品，很厉害，但到了比赛现场，才发现人外有人。',
-'原本一切都是好奇心驱使，现在的我找到了人生的某些意义。我想要更多创造和尝试，想要真正落地，想要真正造福。我意识到，如果只是做科研，我目前的跌倒检测陪伴系统只能覆盖到养老院，还不能完全覆盖所有独居老人。我需要将这些项目真正落地为产品。这些经历已经开始在潜移默化的改变我的人生，也为我未来选择想来MIT Media Lab做了铺垫。'
-]},
-{t:'斯坦福的夏天',en:'Design Thinking',fig:'loop',cap:'一步也不能少',body:[
-'在九年级，马上要升高中，我也打算参与很多夏令营。我有幸入选了Stanford的夏令营，在其中第一次接触了Design Thinking，也就是一套思考流程，比如从Definition到Prototype到Test。这是我第一次系统性的学习如何做出一个产品。我也不得不感叹前人的伟大，很多事都可以取捷径，唯独做产品不行，因为缺一步后面就肯定要补。一步步扎实基础才能做出最完整的作品。',
-'在这个夏令营中，我们听了不同主题的科学家的lecture，同时要写canvas并且围绕一个课题做presentation。这次夏令营让我再次拓宽视野，原本我只知道一些基础的学科，像语数英这些，而在夏令营中，我接触到了FinTech，HealthTech，Cognitive Science等等。同时我第一次感受了美国的学习方式。课上自由的发言与辩论，有什么想法就直接交流，最支持思维的碰撞。我感觉自己的思想都被滋养了。'
-]},
-{t:'最后一排',en:'The Back Row',fig:'backrow',cap:'最后一排的视角',body:[
-'而进入了高中，我在做科研之外，有了新的兴趣爱好，也就是研究人类。我发现其实我在这方面有天分，也许是因为双子座加INFP的自己。我能很轻易洞察人心，看面相，从一举一动就能察觉每个人擅长的点。刚入高中，大家都还不太熟的时候，我开始了一项壮举。我给每个同学取了外号，并且创造了一个小说世界，在小说世界里大家都有自己的角色，与对应的特点（或者说技能），比如有些同学嘴比较毒，就给他一个嘴炮的技能。小说受到了大家的一致好评。',
-'我还爱上了坐在最后一排，不是因为不想好好上课，而是坐在最后一排可以一览众人的行为与神情。我观察那些真朋友假朋友的表现，在观察中慢慢领悟。我不断地思考，想到了很多：取舍，敢爱敢恨，强大的情感内核，拿得起放得下，情绪隐藏在心，只满足自己。归根结底是要爱自己。其实高中生活说来忙碌，但也有些无聊。因为高中的班级有些男女对立，导致我经常在和兄弟玩，在男女情感这方面的经历很少。而且当时也不怎么社会化，没去过club，是一个温室中的花朵。'
-]},
-{t:'稻香',en:'Songs That Remember',fig:'radio',cap:'收音机里的午后',body:[
-'在科研方面，我开启了一段新旅程。当时深度学习很火，而热爱思考的我，发现奶奶特别热爱唱歌，每次唱完歌回来就笑容满面，面色红润。而我自己，在小时候的钢琴熏陶下，也特别热爱音乐，当时的我爱听中国流行歌四大天王周王陶林的歌。',
-'我发现，歌曲真的是特别神秘而厉害的介质。它能带你回到曾经某个听这首歌的场景。我听着Jay Chou的《稻香》，会回到小时候的某个午后，那时候我还没有自己的智能手机，拿着一个收音机听这首《稻香》，当时觉得好好听。那时候赤膊的自己躺在沙发上，爷爷在厨房给我切西瓜吃。听着听着，就魂穿了小时候无忧无虑的自己。',
-'而且歌曲真的能带动人的情绪。那时候的我，根本没有任何故事，但我去KTV，唱周兴哲的歌，比如说《怎么了》，我就是能唱的特别伤感，让别人觉得我有故事。但其实只是我进入了一种心流，我在感悟歌手当时的状态。',
-{plate:'aimusic',cap:'会生成快乐的AI',q:'老人们还能先选自己觉得快乐的音乐，AI会进行定制。'},
-'我就开始在想，对于独居老人而言，除了陪伴，也可以直接从情绪上入手，改变根本问题。多听听歌，尤其是能唤起他们积极情绪的歌，或许也有奇效。当时深度学习特别火，我就在想是否能够让AI对于有情绪标签的数据集进行训练学习，从而生成有积极情绪的音乐。然后我还从记忆入手，因为每个人有个性化的积极情绪音乐。所以老人们还能先选自己觉得快乐的音乐，AI会进行定制。于是继续做了这个新的科研。'
-]},
-{t:'一匹孤狼',en:'Lone Wolf',fig:'bus',cap:'去海滩的公交车上',body:[
-'到了大学，我意识到了connection的重要性。大学的我，刚入大学，从一个小小人性专家，到了施展人性。我更加多的进行了社会化的工作。我开始拓宽社交圈。我一直认为，USC IYA学院的教育资源是其次，connection才是最有价值的。来这里的都是有意提升自己的天才，认识他们，与他们交流，就能收获很多。',
-'刚入大学，我还是很羞涩。我甚至有意避开了USC的上海迎新会。我会想，在这个全是陌生人的环境，我会很尴尬社恐。那时候的我，在高中结交了一个社交圈之后，就几乎不再认识新的朋友。而我们高中只有我来到了USC。我几乎是一匹孤狼来USC开拓新的疆土。但我很害怕。我是个又敏感又社恐的小男孩。那时候的我，真的很不chill，一直都提心吊胆的，不过说到底，还是那时候对自己的不自信。',
-'刚开学，我看到有个认识新朋友的USC海滩party，我想着逼迫自己一把，突破一下，去认识下新朋友。我看到那些从美高出来的同学们，他们很轻松的认识新朋友，完全不怯场，敢于交流。而我，在去海滩的公交车上，一直看着窗外。我想和坐我旁边的同学认识下，但我一直不敢开口，我不知道该说什么话题。我就一直在想，一直在想，直到到了目的地。到了海滩上，我甚至都不太敢与别人对视，更别提女生了。那时候的我真的很羞涩。我发现我只擅长和那些和我一样社恐的男生交流。幸好那时候，也是遇到了一位比较投缘的男生。',
-'后来，我也渐渐的有了一些自己的新朋友，有了不同的社交圈。大学里的connection，大多是朋友介绍朋友认识。不像高中，有自己的班级，大学里是整个校园结交朋友。而且，更多的我觉得靠的是机缘。比如有一位朋友，我是在食堂认识她的。当时就觉得她长得像我ins上关注的一个女生，所以就直接和她打招呼了，然后就开始聊天，聊共友，聊着就熟了。',
-'那时候，我最好的朋友来自我的学院，是一个女生。可以说，她治愈了我男女关系的疾病。第一次见她是一块完成一个作业，那时候我能感受到自己的尴尬。后来，由于我们是同一个学院的，所以一块上很多课，渐渐熟悉了。但一块吃饭的时候，我还是会尴尬于如何找到一个话题。除了她，我认识了来自各个国家的朋友，有美国，有韩国，有印度等，我们一起玩，我感受到了不同的文化。但似乎最后，我还是最喜欢我们中国的文化。这种文化自信确实是刻在我的骨子里了，毕竟在上海生活了18年嘛。'
-]},
-{t:'死亡谷的星星',en:'Death Valley',fig:'valley',cap:'死亡谷的夜空',body:[
-'大一大二，我的生活除了学习与社交，更多的是和朋友出去旅游。有了车之后，我们转遍了洛杉矶周围的各种美景。我永远会记得这种自由的感觉，这是我的青春。我的青春只有一次，唯有活得灿烂热烈才能对得起我自己。',
-'仍然记得，刚拿到车，直接和朋友出发去死亡谷。那时候的我，真的无所畏惧。我们连计划都没做，攻略也没看，我只记得当时满腔热血，去探险，去征服这个世界。我们去超市买了块生肉和一些水就出发了。当时我们的计划是直接在死亡谷生火烤肉过夜。开过去五小时，我们就轮换着开。我们都是第一次在美国开车，但没有丝毫恐惧，我们眼里有着少年气。',
-'进入死亡谷，一片漆黑的路，和全是星星的夜空。第一次这么清晰的看到夜空中的星星，好美。换我开，我仍然记得当时跑山路，过弯开到了80迈，给我朋友都吓坏了。忽然，路中间出现了一只驴，我微打方向盘，完美避开了它。我们都很后怕，但我们有一颗勇敢热烈的心，像是夜空中明亮的星星，一定会指引我们。',
-'结果是，景区不让生火，而且夜晚特别冷，我们睡在了车里。第二天一早，我们起床看日出，然后开始在死亡谷里逛。结果油箱见底了。我们怎么开都见不着尽头，也没有信号。当时我们以为真的要叫直升飞机了。还好在备用油快见底的时候，开了出去找到了加油站。',
-'后来，我们又去了各种森林公园，以及附近的其他州，Utah，Nevada，Arizona，美国的丘陵真的很美。我始终觉得，留学很重要的一件事就是去体验，去在最好的年华体验人生的精彩。'
-]},
-{t:'苦与甜',en:'Love, Learned',fig:'thread',cap:'红线',body:[
-'大二，我主要在学习之余，感悟人生和relationship。我认识了更多的朋友，但是也因此和一些朋友的联系变少了。我开始参与更多的party，开始更加敢于展露自己。我帮身边的一些朋友们谈上了恋爱，而我自己，也被一些relationship所困。',
-'我觉得男女之间的恋爱是很神圣的，里面有特别多的门道，是很难学会的，只有经历了足够多才会慢慢明了。但是，我总结出的一个道理是，要学会爱自己，也要学会爱别人。关注女生的感受，尊重她的感受是很重要的，而不是充满目的性的用各种方式想让她爱上你，或者想从中获利，这是很自私的行为。',
-'大二，我体验了人生的苦与甜，更加让我坚定了一件事：爱自己才是最重要的。要永远记得提升自己，万事都围绕着提升自己。身外之事终究是可以舍弃的，自己是永远的。',
-'而大二，我也开始专注于事业了。',
-'其实留学生大多都是古怪的。但是和古怪的人交朋友也未尝不是一种乐趣呢。说到底，哪个正常人能赚大钱呢？'
-]},
-{t:'为什么不学心理',en:'Why Not Psychology',fig:'papers',cap:'读论文，也是在读一段心流',body:[
-'那为啥不学心理？因为我真的想做出产品。心理学，认知科学自然是必不可少的。但是我更喜欢通过阅读别人研究的精华，也就是论文，感受他们的认知和理解。我一直觉得，有些人穷尽一生写出一本小说，认真读完这本小说，就是经历了一遍他们的人生。同样，读这些论文，也能体验这些专家当时的心流。'
-]},
-{finale:true,t:'未完待续',en:'Epilogue'}
-];
-const FIN=[['xiaoman','小满','人与爱，再结合 AI'],['dunhuang','Dunhuang VR','最终版：敦煌，依旧沉浸'],['bia','BIA','帮助大家：痛点发现，社团活动，connection']];
-const FIN_LAST='还有：研究人，真话与假话。';
+/* ---------------- 内容库：同一份内容，不同的线 ---------------- */
+const B={
+piano:['小时候，依旧贪玩的我，最喜欢玩的三个东西，就是弹琴，乐高和Scratch。像画画什么的，我都不是那么喜欢。小时候，家长们信仰的就是多元发展。在我很小的时候，家长选了很多东西摆在我面前，让我选，我选了琴键？（如果我没记错的话），所以自然而然想到了钢琴，乐器之王。弹钢琴让我有了音乐起源，而我好像又恰巧就有绝对音准。所以就更适合了。但那时候弹钢琴大多数并非自己真正热爱，每次失误还要被打手。'],
+palace:['父母送我去少年宫，想要让我找寻自己的爱好。乐高那个时候很火，而且能靠自己的手拼出自己的各种想法，很有成就感。而我也在少年宫第一次了解到了编程。和乐高很像，但是是电脑上的乐高。也类似拼接的方式，将一个个程序块拼接起来。这让我第一次可以做游戏，也让我第一次了解到MIT，这个Scratch是MIT做出来的，MIT做给低龄小朋友，拖拽的方式很创新。很天才的想法！我也想在未来做出这样的软件！'],
+p_blocks:[{plate:'blocks',cap:'电脑上的乐高',q:'将一个个程序块拼接起来。这让我第一次可以做游戏。'}],
+creator:['那时候的生活很美好。可以自己做游戏，搭房子，几乎能搭建一切自己想要的虚拟或者真实世界，就像是自己的小世界的创世神。'],
+fall:['但那时候的乐高和Scratch主要都是为了满足自己的想法和欲望，活在自己的精神世界中。而在七年级，如今仍然记得，妈妈突然带我回了老家。那一晚，妈妈和外婆都哭成了泪人。我从未见过坚强的妈妈哭的这么伤心过。原来是妈妈的外公因为跌倒去世了。'],
+scratchpi:['那时候在少年宫已经在上升级版的Scratch课，是ScratchPi，也就是Scratch写程序外接乐高硬件，可以让这些硬件动起来，也就是我拥有了赋予他们灵魂的能力。这时候我就开始想，我是不是可以用ScratchPi做些更有意义的事，而不是单单围绕我自己。现在这个跌倒的问题摆在我面前了，我能不能解决这个问题呢？'],
+detector:['那时候幼小的我还不知道做市场调查，我只是想着，看到了这个痛点，我又有一些能力，我就要去解决。执行力驱使，我直接开始一步步研究，如何探测跌倒，如何定义阈值，甚至还有如何携带。我直接做出了一个小型的跌倒检测设备，笨重的外壳，不太灵敏的跌倒检测，但却是我做的第一个产品。我给妈妈展示，我看到她眼里的欣慰，我第一次感觉到产品的意义。能让大家受益，让这个世界变得更美好，就是产品的意义。于是我经历了一系列更加系统和高级的产品定义与调研，我妈帮我找了个导师带着我做。'],
+yea:['后来，我开始更多的接触国际与创业。我参加了一个叫做YEA!的夏令营，在这个里面系统做了第二个产品。当时我们主要围绕独居老人，做了一个XR伴侣看世界的产品。当时VR刚刚兴起，当时就在想，如何更好的运用新技术，让大家获益。VR最大的点就是沉浸，戴上眼镜就进入了这个世界。而我们这个产品就是让养老院的老人们戴上眼镜就可以身临其境回到家乡，很多老人他们行动不便，没办法真正回家乡再看一眼，这种方式也算圆了他们的愿。'],
+hao:['而我们在实地考察的时候，一位聋哑老人用完我们的产品，在我的手心写了一个“好”字。看到老人眼里的光，真的感觉自己的一切努力都有了回报，有了价值。'],
+p_hao:[{plate:'hao',cap:'写在掌心的“好”',q:'一位聋哑老人用完我们的产品，在我的手心写了一个“好”字。'}],
+usa:['而YEA!也让我有机会第一次去了美国参与路演。虽然那时候我还年幼，但我能感受到其他美国人的创意与思想，美国自由的气氛当时就已经感染了我。'],
+companion:['与此同时，我也在养老院发现了一些新的痛点。很多养老院的独居老人们，他们平时很孤单。我们带给他们产品试用的时候，看到他们脸上的笑容，我突然意识到，要是能做一个陪伴他们的小机器人就好了。这其实是我未来会学到的“做Mom Test，了解用户痛点，功能改进”。这能和我的跌倒检测设备组成一个更大的系统，专门为独居老人们服务。'],
+yau:['在我之前的调查中，发现中国老龄化程度已经越来越严重了，尤其是独居老人。这时候的我，已经觉醒了一些市场的概念了。这块市场大，我就选择这块市场。于是我继续利用ScratchPi做出了一整个跌倒检测陪伴系统，获得了丘成桐中学科学奖。而那也是我第一次拓宽眼界。原本我以为小小年纪的我已经做出了产品，很厉害，但到了比赛现场，才发现人外有人。'],
+ideal:['原本一切都是好奇心驱使，现在的我找到了人生的某些意义。我想要更多创造和尝试，想要真正落地，想要真正造福。我意识到，如果只是做科研，我目前的跌倒检测陪伴系统只能覆盖到养老院，还不能完全覆盖所有独居老人。我需要将这些项目真正落地为产品。这些经历已经开始在潜移默化的改变我的人生，也为我未来选择想来MIT Media Lab做了铺垫。'],
+stanford1:['在九年级，马上要升高中，我也打算参与很多夏令营。我有幸入选了Stanford的夏令营，在其中第一次接触了Design Thinking，也就是一套思考流程，比如从Definition到Prototype到Test。这是我第一次系统性的学习如何做出一个产品。我也不得不感叹前人的伟大，很多事都可以取捷径，唯独做产品不行，因为缺一步后面就肯定要补。一步步扎实基础才能做出最完整的作品。'],
+stanford2:['在这个夏令营中，我们听了不同主题的科学家的lecture，同时要写canvas并且围绕一个课题做presentation。这次夏令营让我再次拓宽视野，原本我只知道一些基础的学科，像语数英这些，而在夏令营中，我接触到了FinTech，HealthTech，Cognitive Science等等。同时我第一次感受了美国的学习方式。课上自由的发言与辩论，有什么想法就直接交流，最支持思维的碰撞。我感觉自己的思想都被滋养了。'],
+backrow1:['而进入了高中，我在做科研之外，有了新的兴趣爱好，也就是研究人类。我发现其实我在这方面有天分，也许是因为双子座加INFP的自己。我能很轻易洞察人心，看面相，从一举一动就能察觉每个人擅长的点。刚入高中，大家都还不太熟的时候，我开始了一项壮举。我给每个同学取了外号，并且创造了一个小说世界，在小说世界里大家都有自己的角色，与对应的特点（或者说技能），比如有些同学嘴比较毒，就给他一个嘴炮的技能。小说受到了大家的一致好评。'],
+backrow2:['我爱上了坐在最后一排，不是因为不想好好上课，而是坐在最后一排可以一览众人的行为与神情。我观察那些真朋友假朋友的表现，在观察中慢慢领悟。我不断地思考，想到了很多：取舍，敢爱敢恨，强大的情感内核，拿得起放得下，情绪隐藏在心，只满足自己。归根结底是要爱自己。'],
+hsboring:['其实高中生活说来忙碌，但也有些无聊。因为高中的班级有些男女对立，导致我经常在和兄弟玩，在男女情感这方面的经历很少。而且当时也不怎么社会化，没去过club，是一个温室中的花朵。'],
+grandma:['在科研方面，我开启了一段新旅程。当时深度学习很火，而热爱思考的我，发现奶奶特别热爱唱歌，每次唱完歌回来就笑容满面，面色红润。而我自己，在小时候的钢琴熏陶下，也特别热爱音乐，当时的我爱听中国流行歌四大天王周王陶林的歌。'],
+daoxiang:['我发现，歌曲真的是特别神秘而厉害的介质。它能带你回到曾经某个听这首歌的场景。我听着Jay Chou的《稻香》，会回到小时候的某个午后，那时候我还没有自己的智能手机，拿着一个收音机听这首《稻香》，当时觉得好好听。那时候赤膊的自己躺在沙发上，爷爷在厨房给我切西瓜吃。听着听着，就魂穿了小时候无忧无虑的自己。'],
+ktv:['而且歌曲真的能带动人的情绪。那时候的我，根本没有任何故事，但我去KTV，唱周兴哲的歌，比如说《怎么了》，我就是能唱的特别伤感，让别人觉得我有故事。但其实只是我进入了一种心流，我在感悟歌手当时的状态。'],
+p_aimusic:[{plate:'aimusic',cap:'会生成快乐的AI',q:'老人们还能先选自己觉得快乐的音乐，AI会进行定制。'}],
+emomusic:['我就开始在想，对于独居老人而言，除了陪伴，也可以直接从情绪上入手，改变根本问题。多听听歌，尤其是能唤起他们积极情绪的歌，或许也有奇效。当时深度学习特别火，我就在想是否能够让AI对于有情绪标签的数据集进行训练学习，从而生成有积极情绪的音乐。然后我还从记忆入手，因为每个人有个性化的积极情绪音乐。所以老人们还能先选自己觉得快乐的音乐，AI会进行定制。于是继续做了这个新的科研，并且参与了腾讯的犀牛鸟项目，拿到了金奖，结交了不少腾讯的人脉。'],
+guardians:['与此同时，热爱研究人的我，发现了一个问题。虽然“全员科创”这个口号在中国很火，但是很少有teenagers真的知道如何科创。他们也许有一个想法，但他们不知道科创的全部流程。他们不知道如何将这个想法转化为一个研究，一个项目。毕竟，学校里不教这些。所以我就创立了一个组织，叫S守护者联盟（Science Guardians），以及四个品牌活动，分别是学长说，科创行，大咖谈，Peer to Peer。',
+ '学长说主要是请高校学长来给大家做分享，分享的不只是他们大学里的新鲜经历，他们做项目的流程，更是帮teenagers开拓视野，了解更多的领域；科创行是让大家去实验室实践；大咖谈是请大咖来分享cutting-edge technology作为工具；Peer to Peer则是一对一的同龄人交流。那时候效果不错：我组建并管理了一个70多人的团队，搭建了团队结构和运营流程，社区发展到3万多名学生，在微信和B站累计获得50多万次播放。'],
+usc1:['到了大学，我意识到了connection的重要性。大学的我，刚入大学，从一个小小人性专家，到了施展人性。我更加多的进行了社会化的工作。我开始拓宽社交圈。我一直认为，USC IYA学院的教育资源是其次，connection才是最有价值的。来这里的都是有意提升自己的天才，认识他们，与他们交流，就能收获很多。'],
+usc2:['刚入大学，我还是很羞涩。我甚至有意避开了USC的上海迎新会。我会想，在这个全是陌生人的环境，我会很尴尬社恐。那时候的我，在高中结交了一个社交圈之后，就几乎不再认识新的朋友。而我们高中只有我来到了USC。我几乎是一匹孤狼来USC开拓新的疆土。但我很害怕。我是个又敏感又社恐的小男孩。那时候的我，真的很不chill，一直都提心吊胆的，不过说到底，还是那时候对自己的不自信。'],
+beach:['刚开学，我看到有个认识新朋友的USC海滩party，我想着逼迫自己一把，突破一下，去认识下新朋友。我看到那些从美高出来的同学们，他们很轻松的认识新朋友，完全不怯场，敢于交流。而我，在去海滩的公交车上，一直看着窗外。我想和坐我旁边的同学认识下，但我一直不敢开口，我不知道该说什么话题。我就一直在想，一直在想，直到到了目的地。到了海滩上，我甚至都不太敢与别人对视，更别提女生了。那时候的我真的很羞涩。我发现我只擅长和那些和我一样社恐的男生交流。幸好那时候，也是遇到了一位比较投缘的男生。'],
+friends:['后来，我也渐渐的有了一些自己的新朋友，有了不同的社交圈。大学里的connection，大多是朋友介绍朋友认识。不像高中，有自己的班级，大学里是整个校园结交朋友。而且，更多的我觉得靠的是机缘。比如有一位朋友，我是在食堂认识她的。当时就觉得她长得像我ins上关注的一个女生，所以就直接和她打招呼了，然后就开始聊天，聊共友，聊着就熟了。'],
+bestfriend:['那时候，我最好的朋友来自我的学院，是一个女生。可以说，她治愈了我男女关系的疾病。第一次见她是一块完成一个作业，那时候我能感受到自己的尴尬。后来，由于我们是同一个学院的，所以一块上很多课，渐渐熟悉了。但一块吃饭的时候，我还是会尴尬于如何找到一个话题。'],
+culture:['在USC，我认识了来自各个国家的朋友，有美国，有韩国，有印度等，我们一起玩，我感受到了不同的文化。但似乎最后，我还是最喜欢我们中国的文化。这种文化自信确实是刻在我的骨子里了，毕竟在上海生活了18年嘛。'],
+dv1:['大一大二，我的生活除了学习与社交，更多的是和朋友出去旅游。有了车之后，我们转遍了洛杉矶周围的各种美景。我永远会记得这种自由的感觉，这是我的青春。我的青春只有一次，唯有活得灿烂热烈才能对得起我自己。'],
+dv2:['仍然记得，刚拿到车，直接和朋友出发去死亡谷。那时候的我，真的无所畏惧。我们连计划都没做，攻略也没看，我只记得当时满腔热血，去探险，去征服这个世界。我们去超市买了块生肉和一些水就出发了。当时我们的计划是直接在死亡谷生火烤肉过夜。开过去五小时，我们就轮换着开。我们都是第一次在美国开车，但没有丝毫恐惧，我们眼里有着少年气。'],
+dv3:['进入死亡谷，一片漆黑的路，和全是星星的夜空。第一次这么清晰的看到夜空中的星星，好美。换我开，我仍然记得当时跑山路，过弯开到了80迈，给我朋友都吓坏了。忽然，路中间出现了一只驴，我微打方向盘，完美避开了它。我们都很后怕，但我们有一颗勇敢热烈的心，像是夜空中明亮的星星，一定会指引我们。'],
+dv4:['结果是，景区不让生火，而且夜晚特别冷，我们睡在了车里。第二天一早，我们起床看日出，然后开始在死亡谷里逛。结果油箱见底了。我们怎么开都见不着尽头，也没有信号。当时我们以为真的要叫直升飞机了。还好在备用油快见底的时候，开了出去找到了加油站。'],
+dv5:['后来，我们又去了各种森林公园，以及附近的其他州，Utah，Nevada，Arizona，美国的丘陵真的很美。我始终觉得，留学很重要的一件事就是去体验，去在最好的年华体验人生的精彩。'],
+love1:['大二，我主要在学习之余，感悟人生和relationship。我认识了更多的朋友，但是也因此和一些朋友的联系变少了。我开始参与更多的party，开始更加敢于展露自己。我帮身边的一些朋友们谈上了恋爱，而我自己，也被一些relationship所困。'],
+love2:['我觉得男女之间的恋爱是很神圣的，里面有特别多的门道，是很难学会的，只有经历了足够多才会慢慢明了。但是，我总结出的一个道理是，要学会爱自己，也要学会爱别人。关注女生的感受，尊重她的感受是很重要的，而不是充满目的性的用各种方式想让她爱上你，或者想从中获利，这是很自私的行为。'],
+love3:['大二，我体验了人生的苦与甜，更加让我坚定了一件事：爱自己才是最重要的。要永远记得提升自己，万事都围绕着提升自己。身外之事终究是可以舍弃的，自己是永远的。'],
+career:['而大二，我也开始专注于事业了。'],
+weird:['其实留学生大多都是古怪的。但是和古怪的人交朋友也未尝不是一种乐趣呢。说到底，哪个正常人能赚大钱呢？'],
+psych:['那为啥不学心理？因为我真的想做出产品。心理学，认知科学自然是必不可少的。但是我更喜欢通过阅读别人研究的精华，也就是论文，感受他们的认知和理解。我一直觉得，有些人穷尽一生写出一本小说，认真读完这本小说，就是经历了一遍他们的人生。同样，读这些论文，也能体验这些专家当时的心流。'],
 
-let fn=0; CH.forEach((c,i)=>{c.n=i+1; if(c.fig) c.fno=++fn; (c.body||[]).forEach(b=>{ if(typeof b!=='string') b.fno=++fn; });});
+go_dh:['那位聋哑老人掌心里的“好”字，让我第一次知道，沉浸感可以把人带回他回不去的地方。到了洛杉矶，离家越远，我越想把刻在骨子里的东西带给别人看。于是我想：能不能让人亲手走进敦煌？',
+ {link:{name:'敦煌',sub:'Dunhuang: Re:incarnation',desc:'一款以敦煌文化为灵感的VR解谜游戏',url:'https://zeweiyu.com/work/dunhuang'}}],
+go_bia:['公交车上那个不敢开口的我，后来在微信群里，因为同名又同乡就选了室友，结果住得很辛苦。我想给后来的新生一个更好的起点：找到合得来的室友，找到一起做事的人，也找到探索校园的方向。',
+ {link:{name:'BIA',sub:'A Softer Landing at USC',desc:'帮国际学生在USC落脚的新生工具',url:'https://zeweiyu.com/work/bia'}}],
+go_ac:['坐在最后一排的那几年，我学会了看人说话时的神情，也看清了谁是真朋友、谁是假朋友。后来我自己被骗过，又听妈妈说起她公司在做贷款审核，我开始想：AI能不能帮人听出一个回答里没说出来的东西，同时又不冤枉一个只是不擅长表达的人？',
+ {link:{name:'Cognitive Echoes',sub:'ACPF · EMNLP 2026 Industry Track',desc:'用对抗式追问，帮信贷员识别对话里的风险',url:'https://zeweiyu.com/work/cognitive-echoes'}}],
+go_xm:['我帮朋友们谈上了恋爱，自己却说不清到底会爱上什么样的人。如果连自己都看不清，AI能不能帮我看见那些我看不见的模式？如果它真的懂一个人，能不能帮他找到真正合适的人，而不是靠套路让谁爱上谁？',
+ {link:{name:'小满',sub:'Xiaoman · Learning How We Love',desc:'通过对话理解你、陪你探索亲密关系的AI',url:'https://zeweiyu.com/work/xiaoman'}}],
+xisland:['我发现我创立的守护者联盟，虽然帮助大家更好地创新和探索自我了，但是大家听过分享之后，也就渐渐淡忘了。我在想，或许游戏是一个更好的、更沉浸的体验，所以我在尝试做一些有教育意义、能帮大家探索自我的游戏。这就是X岛。',
+ {link:{name:'X岛',sub:'Island X',desc:'帮人探索自我的教育游戏',url:null}}]
+};
+const THEN={div:'那时的我'};
+const ED={
+time:{name:'时间线篇',blurb:'按发生的顺序，从琴键一路读到X岛。',ch:[
+ {t:'积木与琴键',en:'Keys & Bricks',fig:'piano',cap:'会自己弹的琴键',items:['piano','palace','p_blocks','creator']},
+ {t:'一次跌倒',en:'The Fall',fig:'detector',cap:'第一个产品：跌倒检测器',items:['fall','scratchpi','detector','yea','hao','p_hao','usa']},
+ {t:'养老院里的新痛点',en:'A Companion',fig:'robot',cap:'跌倒检测陪伴系统',items:['companion','yau','ideal']},
+ {t:'斯坦福的夏天',en:'Design Thinking',fig:'loop',cap:'一步也不能少',items:['stanford1','stanford2']},
+ {t:'最后一排',en:'The Back Row',fig:'backrow',cap:'最后一排的视角',items:['backrow1','backrow2','hsboring']},
+ {t:'稻香',en:'Songs That Remember',fig:'radio',cap:'收音机里的午后',items:['grandma','daoxiang','ktv','p_aimusic','emomusic']},
+ {t:'守护者联盟',en:'Science Guardians',fig:'guardians',cap:'从一个人到三万人',items:['guardians']},
+ {t:'一匹孤狼',en:'Lone Wolf',fig:'bus',cap:'去海滩的公交车上',items:['usc1','usc2','beach','friends','bestfriend','culture']},
+ {t:'死亡谷的星星',en:'Death Valley',fig:'valley',cap:'死亡谷的夜空',items:['dv1','dv2','dv3','dv4','dv5']},
+ {t:'苦与甜',en:'Love, Learned',fig:'thread',cap:'红线',items:['love1','love2','love3','career','weird']},
+ {t:'为什么不学心理',en:'Why Not Psychology',fig:'papers',cap:'读论文，也是在读一段心流',items:['psych']},
+ {t:'敦煌',en:'Re:incarnation',fig:'dunhuang',cap:'用手转动阳光',items:['go_dh']},
+ {t:'BIA',en:'A Softer Landing',fig:'bia',cap:'Trojan Quest',items:['go_bia']},
+ {t:'Cognitive Echoes',en:'ACPF',fig:'acpf',cap:'把噪音挡在评分之外',items:['go_ac']},
+ {t:'小满',en:'Learning How We Love',fig:'xiaoman',cap:'绕着红线的汤圆',items:['go_xm']},
+ {t:'X岛',en:'Island X',fig:'island',cap:'下一座岛',items:['xisland']}
+]},
+projects:{name:'项目篇',blurb:'五个项目，每一章都从一段成长经历开始。',ch:[
+ {kind:'pro',t:'第一次为别人造',en:'Where It Began',fig:'detector',cap:'第一个产品：跌倒检测器',items:['palace','fall','scratchpi','detector','companion','yau','ideal']},
+ {t:'敦煌',en:'A World to Step Into',fig:'dunhuang',cap:'用手转动阳光',items:[THEN,'yea','hao','p_hao','culture',{div:'后来，我做了敦煌'},'go_dh']},
+ {t:'BIA',en:'A Softer Landing',fig:'bia',cap:'Trojan Quest',items:[THEN,'usc2','beach',{div:'后来，我做了BIA'},'go_bia']},
+ {t:'Cognitive Echoes',en:'What an Answer Leaves Out',fig:'acpf',cap:'把噪音挡在评分之外',items:[THEN,'backrow1','backrow2',{div:'后来，我做了ACPF'},'go_ac']},
+ {t:'小满',en:'Learning How We Love',fig:'xiaoman',cap:'绕着红线的汤圆',items:[THEN,'love1','love2',{div:'后来，我做了小满'},'go_xm']},
+ {t:'X岛',en:'Island X',fig:'island',cap:'下一座岛',items:[THEN,'guardians',{div:'后来，我在做X岛'},'xisland']},
+ {kind:'epi',t:'小世界的创世神',en:'Back to the Start',fig:'blocks',cap:'电脑上的乐高',items:['creator']}
+]}
+};
+const ORDER=['time','projects'];
+let ed='time';
+try{ const h=location.hash.slice(1), s=localStorage.getItem('mb-ed'); if(ORDER.includes(h)) ed=h; else if(ORDER.includes(s)) ed=s; }catch(e){}
+
+function prepare(){
+  let n=0,fn=0;
+  return ED[ed].ch.map(c=>{
+    const o={...c}; if(!c.kind) o.n=++n; if(c.fig) o.fno=++fn;
+    o.list=c.items.flatMap(x=>typeof x==='string'?B[x]:[x]).map(x=>x&&x.plate?{...x,fno:++fn}:x);
+    return o;
+  });
+}
 
 /* ---------------- 会动的插图 ---------------- */
 let uid=0;
@@ -527,41 +623,87 @@ F.papers=()=>{
   return svg(s);
 };
 F.xiaoman=()=>{
-  let s=`<rect width="160" height="120" class="night"/><circle cx="80" cy="60" r="11" class="core"/><g class="slowspin">`;
-  for(let i=0;i<42;i++){const a=i/42*Math.PI*2,R=27+7*Math.sin(a*3),x=80+R*Math.cos(a),y=60+R*Math.sin(a);
-    s+=`<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="2.1" class="pt p${i%3}" style="--dx:${(Math.cos(a)*8).toFixed(1)}px;--dy:${(Math.sin(a)*8).toFixed(1)}px;animation-delay:${(-i*0.09).toFixed(2)}s"/>`;}
-  return svg(s+'</g>','0 0 160 120');
+  const g='xmg'+(++uid);
+  let s=`<defs><radialGradient id="${g}" cx=".38" cy=".34" r=".72"><stop offset="0" style="stop-color:var(--keyw)"/><stop offset=".7" style="stop-color:var(--paper)"/><stop offset="1" style="stop-color:var(--paper3)"/></radialGradient></defs>`;
+  s+=`<ellipse cx="160" cy="160" rx="44" ry="7" class="sh"/>`;
+  [0,1,2].forEach(i=>s+=`<circle class="rip" cx="160" cy="98" r="40" style="animation-delay:${i*1.3}s"/>`);
+  s+=`<g class="xt xt1"><ellipse cx="160" cy="98" rx="78" ry="20" transform="rotate(-18 160 98)"/></g>`;
+  s+=`<g class="orbb"><circle cx="160" cy="98" r="38" fill="url(#${g})" stroke="var(--ink3)" stroke-width="1"/><ellipse cx="146" cy="84" rx="10" ry="6" fill="var(--keyw)" opacity=".8"/></g>`;
+  s+=`<g class="xt xt2"><path d="M86 112 Q160 140 236 84"/></g><g class="xt xt3"><path d="M100 72 Q170 52 226 118"/></g>`;
+  [[70,40,0],[252,46,1],[240,150,2],[80,150,2.6]].forEach(([x,y,d])=>s+=`<path class="hrt" style="animation-delay:${d}s" d="M${x} ${y} c-4 -6 -12 -2 -6 6 l6 6 l6 -6 c6 -8 -2 -12 -6 -6z"/>`);
+  return svg(s);
 };
 F.dunhuang=()=>{
-  let s=`<rect width="160" height="120" class="sand"/><circle cx="138" cy="18" r="10" class="sun"/><path class="cave" d="M22 120 V64 Q80 6 138 64 V120Z"/><g class="beam"><path class="beamP" d="M138 18 L56 114 L94 118Z"/></g><path class="ribbon" d="M42 70 q18 -18 38 -6 t40 -8"/><g class="wheel"><circle cx="80" cy="100" r="11"/><circle cx="80" cy="100" r="3"/>`;
+  let s=`<rect x="-20" width="200" height="120" class="sand"/><circle cx="138" cy="18" r="10" class="sun"/><path class="cave" d="M22 120 V64 Q80 6 138 64 V120Z"/><g class="beam"><path class="beamP" d="M138 18 L56 114 L94 118Z"/></g><path class="ribbon" d="M42 70 q18 -18 38 -6 t40 -8"/><g class="wheel"><circle cx="80" cy="100" r="11"/><circle cx="80" cy="100" r="3"/>`;
   for(let i=0;i<8;i++){const a=i*Math.PI/4; s+=`<path d="M${(80+3*Math.cos(a)).toFixed(1)} ${(100+3*Math.sin(a)).toFixed(1)} L${(80+16*Math.cos(a)).toFixed(1)} ${(100+16*Math.sin(a)).toFixed(1)}"/>`;}
-  return svg(s+'</g>','0 0 160 120');
+  return svg(s+'</g>','-16 0 192 120');
 };
 F.bia=()=>{
-  let s=`<rect width="160" height="120" class="pa"/>`;
-  for(let c=0;c<4;c++) for(let r=0;r<3;r++) s+=`<rect x="${8+c*38}" y="${10+r*36}" width="30" height="28" rx="2" class="blk"/>`;
+  let s=`<rect x="-20" width="200" height="120" class="pa"/>`;
+  for(let c=-1;c<5;c++) for(let r=0;r<3;r++) s+=`<rect x="${8+c*38}" y="${10+r*36}" width="30" height="28" rx="2" class="blk"/>`;
   s+=`<path class="route" d="M22 102 L42 102 L42 66 L80 66 L80 30 L136 30"/>`;
   [[42,102,.4],[80,66,1.2],[136,30,2.2]].forEach(([x,y,d])=>s+=`<g class="pin" style="animation-delay:${d}s"><path d="M${x} ${y} c0 -6 -7 -8 -7 -14 a7 7 0 0 1 14 0 c0 6 -7 8 -7 14z"/><circle cx="${x}" cy="${y-14}" r="2.6"/></g>`);
-  s+=`<circle class="flash" cx="136" cy="16" r="10"/><text class="tf" x="80" y="116" text-anchor="middle" style="font-size:10px">Trojan Quest</text>`;
-  return svg(s,'0 0 160 120');
+  s+=`<circle class="flash" cx="136" cy="16" r="10"/><rect x="52" y="106" width="56" height="12" rx="6" class="pa" opacity=".9"/><text class="tf" x="80" y="115" text-anchor="middle" style="font-size:9px">Trojan Quest</text>`;
+  return svg(s,'-16 0 192 120');
+};
+F.guardians=()=>{
+  const inner=[],outer=[]; let s='';
+  for(let i=0;i<6;i++){const a=i/6*2*Math.PI-Math.PI/2; inner.push([160+62*Math.cos(a),100+44*Math.sin(a)]);}
+  for(let i=0;i<14;i++){const a=i/14*2*Math.PI-Math.PI/2+.22; outer.push([160+128*Math.cos(a),100+76*Math.sin(a)]);}
+  outer.forEach(([x,y],i)=>{const [ix,iy]=inner[Math.floor(i*6/14)]; s+=`<line class="glk" x1="${ix.toFixed(1)}" y1="${iy.toFixed(1)}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" style="animation-delay:${(1.6+i*.14).toFixed(2)}s"/>`;});
+  inner.forEach(([x,y],i)=>s+=`<line class="glk" x1="160" y1="100" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" style="animation-delay:${(i*.22).toFixed(2)}s"/>`);
+  outer.forEach(([x,y],i)=>s+=`<circle class="gn fg" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="4" style="animation-delay:${(1.7+i*.14).toFixed(2)}s"/>`);
+  inner.forEach(([x,y],i)=>s+=`<circle class="gn fm" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="7" style="animation-delay:${(i*.22).toFixed(2)}s"/>`);
+  s+=`<path class="fc" d="M160 74 L182 82 V100 Q182 120 160 128 Q138 120 138 100 V82 Z"/><path d="M160 79 L177 85.5 V100 Q177 116 160 123 Q143 116 143 100 V85.5 Z" fill="none" stroke="var(--paper)" stroke-width="1"/><text x="160" y="108" text-anchor="middle" class="btx b" style="font-family:var(--f-fellsc);font-size:22px">S</text>`;
+  return svg(s);
+};
+F.acpf=()=>{
+  const id='ac'+(++uid); let pts=[];
+  for(let x=14;x<=210;x+=2){const env=.35+.65*Math.abs(Math.sin(Math.PI*x/60)); pts.push(x+','+(92+16*env*Math.sin(2*Math.PI*x/12)).toFixed(1));}
+  let s=`<clipPath id="${id}"><rect x="14" y="56" width="114" height="72"/></clipPath><text class="tx sm" x="16" y="48">对话录音</text><line x1="14" x2="128" y1="92" y2="92" class="lt" opacity=".3"/><g clip-path="url(#${id})"><polyline class="wv scroll2" points="${pts.join(' ')}"/></g>`;
+  s+=`<g class="nz"><ellipse cx="34" cy="70" rx="5" ry="3.6" transform="rotate(-20 34 70)" class="fi" opacity=".55"/><path d="M38.5 69 V50 q6 4 8 11" fill="none" stroke="var(--ink)" stroke-opacity=".55" stroke-width="1.4"/><text class="tx sm" x="28" y="44" opacity=".7">噪音</text></g>`;
+  s+=`<rect x="136" y="56" width="22" height="72" rx="3" class="pa2" stroke="var(--ink)" stroke-width="1.5"/><path d="M141 70 h12 M141 82 h12 M141 94 h12 M141 106 h12 M141 118 h12" class="lt"/><text class="tx sm" x="147" y="146" text-anchor="middle">质检</text>`;
+  s+=`<path class="nzx" d="M140 38 l14 14 M154 38 l-14 14" stroke="var(--cin)" stroke-width="3" stroke-linecap="round"/>`;
+  [0,.8,1.6,2.4].forEach(d=>s+=`<circle class="pk fc" cx="162" cy="92" r="3.2" style="animation-delay:${d}s"/>`);
+  [['fm',36,0],['fg',52,.5],['fc2',28,1],['fm',44,1.5]].forEach(([c,h,d],i)=>s+=`<rect class="ibar ${c}" x="${200+i*20}" y="${128-h}" width="13" height="${h}" rx="1.5" style="animation-delay:${d}s"/>`);
+  s+=`<line x1="194" x2="284" y1="128" y2="128" class="lt"/><text class="tx sm" x="239" y="146" text-anchor="middle">四个指标</text>`;
+  s+=`<text class="tf" x="160" y="182" text-anchor="middle" style="font-size:14px">G-Mean = √(TPR × TNR)</text>`;
+  return svg(s);
+};
+F.island=()=>{
+  let s=`<rect width="320" height="200" class="sky" opacity=".55"/><circle cx="262" cy="42" r="16" class="sun"/>`;
+  s+=`<g class="drift"><ellipse cx="70" cy="40" rx="22" ry="7" class="pa"/><ellipse cx="86" cy="35" rx="14" ry="7" class="pa"/></g>`;
+  s+=`<rect x="0" y="128" width="320" height="72" class="sea"/>`;
+  s+=`<g class="scroll">`;
+  for(let r=0;r<3;r++){let d=`M-80 ${144+r*18}`; for(let k=0;k<26;k++) d+=` q10 -5 20 0`; s+=`<path d="${d}" class="swave"/>`;}
+  s+=`</g><path class="sand" d="M88 136 Q118 92 160 94 Q206 92 236 136 Z"/><path class="trunk" d="M130 112 q4 -24 -2 -48"/><path class="frond" d="M128 64 q-14 -6 -22 4 M128 64 q14 -8 22 2 M128 64 q-8 -14 -18 -14 M128 64 q8 -14 18 -12"/>`;
+  s+=`<g class="xmk"><path d="M180 108 l14 14 M194 108 l-14 14" stroke="var(--cin)" stroke-width="4" stroke-linecap="round"/></g>`;
+  s+=`<g><path d="M-10 0 h20 l-4 6 h-12 z" class="fi"/><path d="M0 -2 V-18 L10 -4 Z" class="pa" stroke="var(--ink)" stroke-width="1"/><animateMotion dur="12s" repeatCount="indefinite" path="M36 162 a124 20 0 1 0 248 0 a124 20 0 1 0 -248 0"/></g>`;
+  return svg(s);
 };
 const emblem=()=>{let s=`<circle cx="50" cy="50" r="46" class="em-ring"/><circle cx="50" cy="50" r="38" class="em-dash"/><g class="em-orb">`; for(let i=0;i<8;i++){const a=i*Math.PI/4; s+=`<circle cx="${(50+42*Math.cos(a)).toFixed(1)}" cy="${(50+42*Math.sin(a)).toFixed(1)}" r="${i%2?1.4:2.4}"/>`;} return `<svg viewBox="0 0 100 100" aria-hidden="true">${s}</g><path class="em-star" d="M50 30 L54 46 L70 50 L54 54 L50 70 L46 54 L30 50 L46 46Z"/></svg>`;};
 
+const chapNum=c=>c.kind==='pro'?'序章':c.kind==='epi'?'尾声':'第'+CN[c.n]+'章';
+const chapEn=c=>(c.kind==='pro'?'Prologue':c.kind==='epi'?'Epilogue':'Chapter '+RO[c.n])+' · '+c.en;
 const figHTML=(id,no,cap)=>`<figure class="fig"><div class="frame"><div class="pic">${F[id]()}</div></div>${cap?`<figcaption><b>Fig. ${RO[no]}</b>${cap}</figcaption>`:''}</figure>`;
-const openerHTML=c=>`<div class="opener">${c.fig?figHTML(c.fig,c.fno,c.cap):''}<div class="ch-en">Chapter ${RO[c.n]} · ${c.en}</div><div class="ch-title">${c.t}</div><div class="rule"><i></i></div></div>`;
+const openerHTML=c=>`<div class="opener">${c.fig?figHTML(c.fig,c.fno,c.cap):''}<div class="ch-en">${chapEn(c)}</div><div class="ch-title">${c.t}</div><div class="rule"><i></i></div></div>`;
 const plateHTML=b=>`<div class="plate"><div class="pl-no">Plate ${RO[b.fno]}</div>${figHTML(b.plate,b.fno,b.cap)}<div class="pl-q">${b.q.replace(/^“|”$/g,'')}</div></div>`;
-const finaleHTML=()=>`<div class="finale"><div class="opener"><div class="ch-en">Epilogue</div><div class="ch-title">未完待续</div><div class="fin-sub">作者手记 · 这几章还在写</div></div><div class="fin-list">${FIN.map(([id,n,t])=>`<div class="fin-item"><div class="frame"><div class="pic">${F[id]()}</div></div><div><div class="fin-name">${n}</div><div class="hand">${t}</div></div></div>`).join('')}</div><div class="hand fin-last">${FIN_LAST}</div></div>`;
-const titleHTML=()=>`<div class="titlepage"><div class="tp-en">The Autobiography of</div><div class="tp-name">Andy Yu</div><div class="tp-title">小世界的创世神</div><div class="rule" style="width:40%"><i></i></div><div class="tp-role">Product + Experience Designer</div><div class="tp-ep">“能让大家受益，让这个世界变得更美好，就是产品的意义。”</div><div class="seal">AY</div><div class="tp-foot">上海 · 洛杉矶</div></div>`;
-const endHTML=()=>`<div class="endpage"><div class="end-big">未完<br>待续</div><div class="rule" style="width:36%"><i></i></div><div class="end-en">to be continued</div><div class="seal" style="margin-top:.8em">AY</div></div>`;
-const coverHTML=()=>`<div class="cover"><div class="cv-frame"><i></i><i></i><i></i><i></i><div class="cv-top">Andy Yu</div><div class="cv-emblem">${emblem()}</div><div class="cv-title">小世界的<br>创世神</div><div class="cv-sub">自传</div><div class="cv-bot">MMXXVI</div></div></div>`;
+const portalHTML=l=>{
+  const inner=`<span class="po-k">${l.url?'作品集 · Portfolio':'作品页筹备中'}</span><span class="po-n">${l.name}</span><span class="po-s">${l.sub}</span><span class="po-d">${l.desc}</span>${l.url?`<span class="po-go">翻开作品页 <i>→</i></span>`:''}`;
+  return l.url?`<a class="portal" href="${l.url}" target="_blank" rel="noopener">${inner}</a>`:`<div class="portal soon">${inner}</div>`;
+};
+const edTabs=()=>`<div class="ed-label">换一条线来读</div><div class="ed-tabs" role="group" aria-label="选择读法">${ORDER.map(k=>`<button class="ed-tab${k===ed?' on':''}" data-ed="${k}" aria-pressed="${k===ed}">${ED[k].name}</button>`).join('')}</div><div class="ed-blurb">${ED[ed].blurb}</div>`;
+const titleHTML=()=>`<div class="titlepage"><div class="tp-en">The Autobiography of</div><div class="tp-name">Andy Yu</div><div class="tp-title">小世界的创世神</div><div class="rule" style="width:40%"><i></i></div><div class="tp-role">Product + Experience Designer</div>${edTabs()}<div class="seal">AY</div></div>`;
+const endHTML=()=>`<div class="endpage"><div class="end-big">未完<br>待续</div><div class="rule" style="width:36%"><i></i></div><div class="end-en">to be continued</div><a class="end-link" href="https://zeweiyu.com/" target="_blank" rel="noopener">zeweiyu.com</a><div class="seal" style="margin-top:.6em">AY</div></div>`;
+const coverHTML=()=>`<div class="cover"><div class="cv-frame"><i></i><i></i><i></i><i></i><div class="cv-top">Andy Yu</div><div class="cv-emblem">${emblem()}</div><div class="cv-title">小世界的<br>创世神</div><div class="cv-sub">自传 · ${ED[ed].name}</div><div class="cv-bot">MMXXVI</div></div></div>`;
 const backHTML=()=>`<div class="cover backc"><div class="cv-frame"><i></i><i></i><i></i><i></i><div class="cv-emblem" style="width:calc(var(--pw)*.2)">${emblem()}</div><div class="cv-bot" style="color:var(--gold)">Andy Yu</div></div></div>`;
-const endpHTML=withPlate=>`<div class="endp">${withPlate?`<div class="bookplate"><div class="bp-ex">Ex Libris</div><div class="bp-name">Andy Yu</div><div class="bp-hint">点右页往后翻，点左页往回翻<br>键盘 ← → 也可以</div></div>`:''}</div>`;
+const endpHTML=withPlate=>`<div class="endp">${withPlate?`<div class="bookplate"><div class="bp-ex">Ex Libris</div><div class="bp-name">Andy Yu</div><div class="bp-hint">点右页往后翻，点左页往回翻<br>键盘 ← → 也可以<br>扉页上可以换一条线来读</div></div>`:''}</div>`;
 const verso=()=>`<div class="verso"></div>`;
 
 /* ---------------- 排版与翻页 ---------------- */
 const root=document.documentElement, clip=document.getElementById('clip'), book=document.getElementById('book');
 const whereEl=document.getElementById('where'), chapEl=document.getElementById('chap');
-const prevB=document.getElementById('prev'), nextB=document.getElementById('next'), tocB=document.getElementById('tocBtn');
+const prevB=document.getElementById('prev'), nextB=document.getElementById('next'), tocB=document.getElementById('tocBtn'), edB=document.getElementById('edBtn');
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 let PW,PH,dbl=true,P=[],leaves=[],f=0,maxF=0,starts=[];
 
@@ -580,40 +722,54 @@ function dims(){
 }
 
 function paginate(){
+  const chs=prepare();
   const meas=document.createElement('div'); meas.className='measure'; meas.style.width=PW+'px'; meas.style.height=PH+'px';
   meas.innerHTML='<div class="page front"><div class="flow"></div></div>'; document.body.appendChild(meas);
   const flow=meas.querySelector('.flow');
-  const fits=()=>flow.scrollHeight<=flow.clientHeight+1;
+  const fits=(extra=0)=>{ if(flow.scrollHeight>flow.clientHeight+1) return false; if(!extra) return true; const lc=flow.lastElementChild; return !lc||lc.offsetTop+lc.offsetHeight+extra<=flow.clientHeight+1; };
   const out=[{kind:'title'},{kind:'toc'}]; let cur=null, pending=[]; starts=[];
   const close=()=>{ if(flow.childNodes.length){ out.push({kind:'text',html:flow.innerHTML,chap:cur}); flow.innerHTML=''; } while(pending.length) out.push(pending.shift()); };
-  const addPara=(text,drop,cont)=>{
-    const p=document.createElement('p'); if(cont) p.className='cont'; else if(drop) p.className='first';
-    const set=n=>{const t=text.slice(0,n); p.innerHTML=(drop&&!cont)?`<span class="dc">${t[0]}</span>${t.slice(1)}`:t;};
+  const addPara=(text,mode,cont,guard=0)=>{
+    const p=document.createElement('p'), drop=mode==='first'&&!cont;
+    p.className=[mode==='note'?'note-p':'',cont?'cont':(drop?'first':'')].join(' ').trim();
+    const set=n=>{const t=text.slice(0,n); p.innerHTML=drop?`<span class="dc">${t[0]}</span>${t.slice(1)}`:t;};
+    const wasEmpty=!flow.childNodes.length;
     set(text.length); flow.appendChild(p);
-    if(fits()) return;
+    if(fits()||(wasEmpty&&guard>2)) return;
     let lo=0,hi=text.length-1;
     while(lo<hi){const m=(lo+hi+1)>>1; set(m); if(fits()) lo=m; else hi=m-1;}
     while(lo>1 && /[，。！？、；：”’）》」…!?,.]/.test(text[lo])) lo--;
     while(lo>1 && /[A-Za-z0-9]/.test(text[lo]) && /[A-Za-z0-9]/.test(text[lo-1])) lo--;
-    const whole = lo<=1 || (drop&&!cont&&lo<4);
+    const whole = lo<=1 || (drop&&lo<4);
     if(whole) p.remove(); else { set(lo); p.classList.add('split'); }
     close();
-    if(whole) addPara(text,drop,cont); else addPara(text.slice(lo),false,true);
+    if(whole) addPara(text,mode,cont,guard+1); else addPara(text.slice(lo),mode,true);
   };
-  for(const c of CH){
+  const addBlock=(html,keep)=>{
+    const w=document.createElement('div'); w.innerHTML=html; const el=w.firstElementChild; flow.appendChild(el);
+    const lh=keep?parseFloat(getComputedStyle(flow).fontSize)*1.85*2:0;
+    if(fits(lh)||flow.childNodes.length===1) return;
+    el.remove(); close(); flow.appendChild(el);
+  };
+  for(const c of chs){
     close(); cur=c; starts.push({c,idx:out.length});
-    if(c.finale){ out.push({kind:'finale',chap:c}); continue; }
-    const op=document.createElement('div'); op.innerHTML=openerHTML(c); flow.appendChild(op.firstElementChild);
+    addBlock(openerHTML(c));
     let first=true;
-    for(const b of c.body){ if(typeof b!=='string'){ pending.push({kind:'plate',html:plateHTML(b),chap:c}); continue; } addPara(b,first,false); first=false; }
+    for(const it of c.list){
+      if(typeof it==='string'){ addPara(it,first?'first':'',false); first=false; }
+      else if(it.plate) pending.push({kind:'plate',html:plateHTML(it),chap:c});
+      else if(it.div) addBlock(`<div class="sub"><span>${it.div}</span></div>`,true);
+      else if(it.note) addPara(it.note,'note',false);
+      else if(it.link) addBlock(portalHTML(it.link));
+    }
   }
   close(); out.push({kind:'end'});
   meas.remove();
   return out;
 }
 
-const tocHTML=()=>`<div class="toc"><h2>目录</h2>${starts.map(({c,idx})=>`<button class="toc-item" data-go="${idx}"><span class="t-num">${c.finale?'终章':'第'+CN[c.n]+'章'}</span><span class="t-name">${c.t}</span><span class="t-dots"></span><span class="t-pg">${idx+1}</span></button>`).join('')}</div>`;
-const chapLabel=c=>c?(c.finale?'终章 · 未完待续':`第${CN[c.n]}章 · ${c.t}`):'';
+const tocHTML=()=>`<div class="toc${starts.length>9?' dense':''}"><h2>目录</h2>${starts.map(({c,idx})=>`<button class="toc-item" data-go="${idx}"><span class="t-num">${chapNum(c)}</span><span class="t-name">${c.t}</span><span class="t-dots"></span><span class="t-pg">${idx+1}</span></button>`).join('')}</div>`;
+const chapLabel=c=>c?`${chapNum(c)} · ${c.t}`:'';
 function pageFace(pg,i,side){
   if(!pg) return verso();
   const wrap=(inner,rh,folio)=>`<div class="page ${side}">${rh?`<div class="rh">${rh}</div>`:''}<div class="flow">${inner}</div>${folio?`<div class="folio">${folio}</div>`:''}</div>`;
@@ -621,7 +777,6 @@ function pageFace(pg,i,side){
     case 'title': return wrap(titleHTML());
     case 'toc': return wrap(tocHTML(),'',i+1);
     case 'text': case 'plate': return wrap(pg.html,chapLabel(pg.chap),i+1);
-    case 'finale': return wrap(finaleHTML(),'',i+1);
     case 'end': return wrap(endHTML());
     default: return wrap('');
   }
@@ -672,13 +827,13 @@ function visible(){
 }
 function updateBar(){
   const v=visible();
-  prevB.disabled=f===0; nextB.disabled=f===maxF;
+  prevB.disabled=f===0; nextB.disabled=f===maxF; edB.textContent=ED[ed].name;
   if(f===0){ whereEl.textContent='封面'; chapEl.textContent='点封面翻开'; return; }
-  if(f===maxF){ whereEl.textContent='封底'; chapEl.textContent='全书完 · 未完待续'; return; }
+  if(f===maxF){ whereEl.textContent='封底'; chapEl.textContent='未完待续'; return; }
   const nums=v.filter(x=>P[x]&&P[x].kind!=='blank').map(x=>x+1);
   whereEl.textContent=nums.length?`第 ${nums.join('–')} 页 · 共 ${P.length} 页`:'衬页';
   const last=v.map(x=>P[x]).filter(Boolean).pop();
-  chapEl.textContent=!last?'Ex Libris':last.kind==='title'?'扉页':last.kind==='toc'?'目录':last.kind==='end'?'未完待续':chapLabel(last.chap);
+  chapEl.textContent=!last?'Ex Libris':last.kind==='title'?'扉页 · '+ED[ed].name:last.kind==='toc'?'目录':last.kind==='end'?'未完待续':chapLabel(last.chap);
 }
 function goTo(i,instant){ if(dbl){const k=Math.floor(i/2)+1; setFlip(i%2===0?k:k+1,instant);} else setFlip(i+1,instant); }
 const next=()=>setFlip(f+1), prev=()=>setFlip(f-1);
@@ -691,9 +846,18 @@ function rebuild(keep){
   buildLeaves();
   if(anchor===null||anchor==='cover') setFlip(0,true); else if(anchor==='back') setFlip(maxF,true); else goTo(Math.min(anchor,P.length-1),true);
 }
+function switchEd(k){
+  if(!ED[k]||k===ed) return;
+  ed=k;
+  try{ localStorage.setItem('mb-ed',ed); }catch(e){}
+  try{ history.replaceState(null,'','#'+ed); }catch(e){}
+  rebuild(false); goTo(0,true);
+}
 
 book.addEventListener('click',e=>{
   if(swiped){swiped=false;return;}
+  if(e.target.closest('a')){ e.stopPropagation(); return; }
+  const k=e.target.closest('[data-ed]'); if(k){ e.stopPropagation(); switchEd(k.dataset.ed); return; }
   const g=e.target.closest('[data-go]'); if(g){ e.stopPropagation(); goTo(+g.dataset.go); return; }
   if(f===0){next();return;} if(f===maxF&&dbl){prev();return;}
   const r=clip.getBoundingClientRect(), x=e.clientX-r.left;
@@ -704,7 +868,8 @@ book.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;sy=e.touches[0].c
 book.addEventListener('touchend',e=>{ if(sx===null) return; const dx=e.changedTouches[0].clientX-sx, dy=e.changedTouches[0].clientY-sy; if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)){ swiped=true; (dx<0?next:prev)(); setTimeout(()=>swiped=false,400);} sx=null; },{passive:true});
 prevB.addEventListener('click',prev); nextB.addEventListener('click',next);
 tocB.addEventListener('click',()=>goTo(1));
-document.addEventListener('keydown',e=>{ if(e.key==='ArrowRight'||e.key==='PageDown'){next();e.preventDefault();} else if(e.key==='ArrowLeft'||e.key==='PageUp'){prev();e.preventDefault();} else if(e.key==='Home'){setFlip(0);} else if(e.key==='End'){setFlip(maxF);} });
+edB.addEventListener('click',()=>switchEd(ORDER[(ORDER.indexOf(ed)+1)%ORDER.length]));
+document.addEventListener('keydown',e=>{ if(e.target.closest&&e.target.closest('button,a')&&(e.key===' '||e.key==='Enter')) return; if(e.key==='ArrowRight'||e.key==='PageDown'){next();e.preventDefault();} else if(e.key==='ArrowLeft'||e.key==='PageUp'){prev();e.preventDefault();} else if(e.key==='Home'){setFlip(0);} else if(e.key==='End'){setFlip(maxF);} });
 let rt; window.addEventListener('resize',()=>{clearTimeout(rt); rt=setTimeout(()=>rebuild(true),250);});
 
 /* 金色浮尘 */
@@ -716,16 +881,18 @@ let rt; window.addEventListener('resize',()=>{clearTimeout(rt); rt=setTimeout(()
 })();
 
 /* 等字体到位后再排版 */
-const allText=CH.map(c=>c.t+c.en+(c.cap||'')+(c.body||[]).map(b=>typeof b==='string'?b:b.cap+b.q).join('')).join('')+FIN.flat().join('')+FIN_LAST+'目录扉页第章终未完待续作者手记这几章还在写一二三四五六七八九十页共封面底衬说点什么好呢……人物志卷积极情绪个性化快乐温暖回忆技能★角色卡笨重的外壳阈值上海洛杉矶';
-const cal=CH.map(c=>c.t).join('')+'小世界的创世神好目录未完待续';
+const flat=x=>typeof x==='string'?x:x&&typeof x==='object'?Object.values(x).map(flat).join(''):'';
+const allText=flat(B)+flat(ED)+'目录扉页序章尾声第章未完待续换一条线来读作品集筹备中翻开作品页一二三四五六七八九十页共封面底衬说点什么好呢……人物志卷积极情绪个性化快乐温暖回忆技能★角色卡笨重的外壳阈值对话录音噪音质检四个指标点右往后翻左回键盘也可以';
+const cal=ED.time.ch.concat(ED.projects.ch).map(c=>c.t).join('')+'小世界的创世神好目录未完待续';
 let timedOut=false;
 const loads=Promise.all([
   document.fonts.load('400 16px "Noto Serif SC"',allText),
+  document.fonts.load('600 16px "Noto Serif SC"','S'),
   document.fonts.load('400 16px "Ma Shan Zheng"',cal),
-  document.fonts.load('400 16px "IM Fell English"','Chapter Fig Plate'),
-  document.fonts.load('italic 400 16px "IM Fell English"','Andy Yu Epilogue'),
-  document.fonts.load('400 16px "IM Fell English SC"','EX LIBRIS'),
-  document.fonts.load('400 16px "Long Cang"',FIN.flat().join('')+FIN_LAST+'作者手记这几章还在写说点什么好呢人物志第一卷')
+  document.fonts.load('400 16px "IM Fell English"','Chapter Fig Plate G-Mean'),
+  document.fonts.load('italic 400 16px "IM Fell English"','Andy Yu Epilogue Prologue'),
+  document.fonts.load('400 16px "IM Fell English SC"','EX LIBRIS S'),
+  document.fonts.load('400 16px "Long Cang"',flat(ED)+'说点什么好呢人物志第一卷这一章还在写')
 ]).catch(()=>{});
 Promise.race([loads,new Promise(r=>setTimeout(()=>{timedOut=true;r();},5000))]).then(()=>{
   rebuild(false); started=true; document.getElementById('loading').remove();
