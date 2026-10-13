@@ -328,6 +328,10 @@ body.single .edge{display:none!important}
 @keyframes nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
 @keyframes portalGlow{0%,100%{box-shadow:0 3px 10px rgba(60,35,10,.22),0 0 0 rgba(239,216,148,0)}50%{box-shadow:0 3px 10px rgba(60,35,10,.22),0 0 18px rgba(201,162,78,.55)}}
 .flow > .portal:first-child{margin-top:26%}
+.coda{display:flex;flex-direction:column;align-items:center;gap:.9em;margin-top:1.2em;text-align:center}
+.coda .rule{width:40%}
+.flow .coda p{font-family:var(--f-cal);font-size:1.3em;line-height:1.7;color:var(--ink);text-indent:0;text-align:center;margin:0}
+.flow > .coda:first-child{margin-top:30%}
 .end-link{font-family:var(--f-fell);font-style:italic;color:var(--cin);font-size:1em;text-decoration:none;border-bottom:1px solid var(--cin2)}
 .toc.dense h2{margin-bottom:.35em}
 .toc.dense .toc-item{font-size:.82em;padding:.05em .1em;line-height:1.55}
@@ -436,6 +440,10 @@ career:['而大二，我也开始专注于事业了。'],
 weird:['其实留学生大多都是古怪的。但是和古怪的人交朋友也未尝不是一种乐趣呢。说到底，哪个正常人能赚大钱呢？'],
 psych:['那为啥不学心理？因为我真的想做出产品。心理学，认知科学自然是必不可少的。但是我更喜欢通过阅读别人研究的精华，也就是论文，感受他们的认知和理解。我一直觉得，有些人穷尽一生写出一本小说，认真读完这本小说，就是经历了一遍他们的人生。同样，读这些论文，也能体验这些专家当时的心流。'],
 
+future:['回头看，从跌倒检测器到X岛，我做的每一件事里都有技术：传感器和阈值，VR里用手转动的阳光，对话里的风险信号，四十个维度的匹配。但让我一直做下去的，从来不是技术本身，而是用过它的那个人：妈妈眼里的欣慰，老人写在我掌心的“好”字，玩家摘下头显时说，好像真的走进了敦煌。',
+ '这也是我想去MIT Media Lab的原因。我第一次知道MIT，就是因为Scratch。它背后当然有很深的技术，但它最了不起的地方，是让一个像我这样的小孩，第一次能自己造出一个世界。Media Lab做的事情，和我一直想做的事情很像：把最前沿的技术，做成人们真的会用、真的会因此改变的东西。不只是做出一个demo，而是真正落地，真正对人产生影响。',
+ '我想在那里继续做我一直在做的事：用技术去理解人，再用游戏、AI和沉浸式的体验，帮每个人探索自己、找到彼此。我想要更多创造和尝试，想要真正落地，想要真正造福。',
+ {coda:'小时候，<br>我是自己小世界的创世神。<br>以后，我想帮更多的人，<br>成为他们自己小世界的创世神。'}],
 go_dh:['那位聋哑老人掌心里的“好”字，让我第一次知道，沉浸感可以把人带回他回不去的地方。到了洛杉矶，离家越远，我越想把刻在骨子里的东西带给别人看。于是我想：能不能让人亲手走进敦煌？',
  {link:{name:'敦煌',sub:'Dunhuang: Re:incarnation',desc:'一款以敦煌文化为灵感的VR解谜游戏',url:'https://zeweiyu.com/work/dunhuang'}}],
 go_bia:['公交车上那个不敢开口的我，后来在微信群里，因为同名又同乡就选了室友，结果住得很辛苦。我想给后来的新生一个更好的起点：找到合得来的室友，找到一起做事的人，也找到探索校园的方向。',
@@ -465,7 +473,8 @@ time:{name:'时间线篇',blurb:'按发生的顺序，从琴键一路读到X岛�
  {t:'BIA',en:'A Softer Landing',fig:'bia',cap:'Trojan Quest',items:['go_bia']},
  {t:'Cognitive Echoes',en:'ACPF',fig:'acpf',cap:'把噪音挡在评分之外',items:['go_ac']},
  {t:'小满',en:'Learning How We Love',fig:'xiaoman',cap:'绕着红线的汤圆',items:['go_xm']},
- {t:'X岛',en:'Island X',fig:'island',cap:'下一座岛',items:['xisland']}
+ {t:'X岛',en:'Island X',fig:'island',cap:'下一座岛',items:['xisland']},
+ {kind:'epi',t:'小世界的创世神',en:'What Comes Next',fig:'blocks',cap:'电脑上的乐高',items:['future']}
 ]},
 projects:{name:'项目篇',blurb:'五个项目，每一章都从一段成长经历开始。',ch:[
  {kind:'pro',t:'第一次为别人造',en:'Where It Began',fig:'detector',cap:'第一个产品：跌倒检测器',items:['palace','fall','scratchpi','detector','companion','yau','ideal']},
@@ -474,7 +483,7 @@ projects:{name:'项目篇',blurb:'五个项目，每一章都从一段成长经�
  {t:'Cognitive Echoes',en:'What an Answer Leaves Out',fig:'acpf',cap:'把噪音挡在评分之外',items:[THEN,'backrow1','backrow2',{div:'后来，我做了ACPF'},'go_ac']},
  {t:'小满',en:'Learning How We Love',fig:'xiaoman',cap:'绕着红线的汤圆',items:[THEN,'love1','love2',{div:'后来，我做了小满'},'go_xm']},
  {t:'X岛',en:'Island X',fig:'island',cap:'下一座岛',items:[THEN,'guardians',{div:'后来，我在做X岛'},'xisland']},
- {kind:'epi',t:'小世界的创世神',en:'Back to the Start',fig:'blocks',cap:'电脑上的乐高',items:['creator']}
+ {kind:'epi',t:'小世界的创世神',en:'Back to the Start',fig:'blocks',cap:'电脑上的乐高',items:['creator',{div:'以后'},'future']}
 ]}
 };
 const ORDER=['time','projects'];
@@ -761,6 +770,7 @@ function paginate(){
       else if(it.div) addBlock(`<div class="sub"><span>${it.div}</span></div>`,true);
       else if(it.note) addPara(it.note,'note',false);
       else if(it.link) addBlock(portalHTML(it.link));
+      else if(it.coda) addBlock(`<div class="coda"><div class="rule"><i></i></div><p>${it.coda}</p></div>`);
     }
   }
   close(); out.push({kind:'end'});
@@ -883,7 +893,7 @@ let rt; window.addEventListener('resize',()=>{clearTimeout(rt); rt=setTimeout(()
 /* 等字体到位后再排版 */
 const flat=x=>typeof x==='string'?x:x&&typeof x==='object'?Object.values(x).map(flat).join(''):'';
 const allText=flat(B)+flat(ED)+'目录扉页序章尾声第章未完待续换一条线来读作品集筹备中翻开作品页一二三四五六七八九十页共封面底衬说点什么好呢……人物志卷积极情绪个性化快乐温暖回忆技能★角色卡笨重的外壳阈值对话录音噪音质检四个指标点右往后翻左回键盘也可以';
-const cal=ED.time.ch.concat(ED.projects.ch).map(c=>c.t).join('')+'小世界的创世神好目录未完待续';
+const cal=ED.time.ch.concat(ED.projects.ch).map(c=>c.t).join('')+'小世界的创世神好目录未完待续小时候我是自己以后想帮更多的人成为他们，。';
 let timedOut=false;
 const loads=Promise.all([
   document.fonts.load('400 16px "Noto Serif SC"',allText),
